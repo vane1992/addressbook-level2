@@ -1,5 +1,6 @@
 package seedu.addressbook.data.person;
 
+import seedu.addressbook.data.tag.Tagging;
 import seedu.addressbook.data.tag.UniqueTagList;
 
 import java.util.Objects;
@@ -9,6 +10,8 @@ import java.util.Objects;
  * Guarantees: details are present and not null, field values are validated.
  */
 public class Person implements ReadOnlyPerson {
+	//implement tagging class
+	Tagging tagging;
 
     private Name name;
     private Phone phone;
@@ -16,6 +19,8 @@ public class Person implements ReadOnlyPerson {
     private Address address;
 
     private final UniqueTagList tags;
+
+	public Name fullname;
     /**
      * Assumption: Every field must be present and not null.
      */

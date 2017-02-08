@@ -7,6 +7,8 @@ import seedu.addressbook.data.exception.IllegalValueException;
  * Guarantees: immutable; name is valid as declared in {@link #isValidTagName(String)}
  */
 public class Tag {
+	//implement tagging class
+	Tagging tagging;
 
     public static final String MESSAGE_TAG_CONSTRAINTS = "Tags names should be alphanumeric";
     public static final String TAG_VALIDATION_REGEX = "\\p{Alnum}+";
@@ -49,5 +51,4 @@ public class Tag {
     public String toString() {
         return '[' + tagName + ']';
     }
-
 }
