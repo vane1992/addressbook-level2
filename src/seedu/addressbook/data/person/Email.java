@@ -6,28 +6,22 @@ import seedu.addressbook.data.exception.IllegalValueException;
  * Represents a Person's email in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
  */
-public class Email {
+public class Email extends Contact{
 
     public static final String EXAMPLE = "valid@e.mail";
     public static final String MESSAGE_EMAIL_CONSTRAINTS =
             "Person emails should be 2 alphanumeric/period strings separated by '@'";
     public static final String EMAIL_VALIDATION_REGEX = "[\\w\\.]+@[\\w\\.]+";
 
-    public final String value;
-    private boolean isPrivate;
-
+    public final String value = "0";
+    public boolean isPrivate;
     /**
      * Validates given email.
      *
      * @throws IllegalValueException if given email address string is invalid.
      */
-    public Email(String email, boolean isPrivate) throws IllegalValueException {
-        this.isPrivate = isPrivate;
-        String trimmedEmail = email.trim();
-        if (!isValidEmail(trimmedEmail)) {
-            throw new IllegalValueException(MESSAGE_EMAIL_CONSTRAINTS);
-        }
-        this.value = trimmedEmail;
+    public Email(String EXAMPLE, String MESSAGE_EMAIL_CONSTRAITS, String EMAIL_VALIDATION_REGEX, String value, boolean isPrivate){
+        super(EXAMPLE, MESSAGE_EMAIL_CONSTRAITS, EMAIL_VALIDATION_REGEX, value, isPrivate);
     }
 
     /**
@@ -39,7 +33,7 @@ public class Email {
 
     @Override
     public String toString() {
-        return value;
+        return super.value;
     }
 
     @Override
@@ -51,11 +45,15 @@ public class Email {
 
     @Override
     public int hashCode() {
-        return value.hashCode();
+        return super.hashCode();
     }
 
 
     public boolean isPrivate() {
-        return isPrivate;
+        return super.isPrivate();
     }
+
+	public void setPrivate(boolean isPrivate) {
+		this.isPrivate = isPrivate;
+	}
 }
